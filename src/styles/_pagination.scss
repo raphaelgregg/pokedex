@@ -1,0 +1,31 @@
+.pagination {
+  background: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 8px 0;
+
+  div {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+  }
+
+  div:not(.numbers),
+  div.numbers div {
+    width: 40px;
+    height: 40px;
+
+    border: solid 1px $white;
+  }
+
+  div.numbers div:hover,
+  div.numbers div.active {
+    color: orange;
+  }
+}

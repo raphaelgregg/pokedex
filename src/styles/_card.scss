@@ -1,0 +1,25 @@
+.card {
+  border-radius: 10%;
+  height: 140px;
+  width: 140px;
+
+  margin: auto;
+
+  background: $orange;
+
+  &-inseto {
+    background: $green;
+  }
+
+  &-fire {
+    background: $red;
+  }
+
+  &-earth {
+    background: $yellow;
+  }
+
+  &-water {
+    background: $blue;
+  }
+}
