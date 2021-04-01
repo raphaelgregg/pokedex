@@ -37,6 +37,11 @@
     justify-items: center;
     align-self: center;
   }
+
+  .poke-detail {
+    width: 100vw !important;
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 470px) {
@@ -56,5 +61,11 @@
   .card {
     min-width: 170px;
     min-height: 170px;
+  }
+
+  .poke-detail {
+    .poke-stats {
+      gap: 30px 30px !important;
+    }
   }
 }
