@@ -19,11 +19,12 @@ html {
 
 body {
   background: url(./images/ball.jpg) no-repeat black fixed;
-  background-size: 43.75rem;
+  background-size: 40.75rem;
   background-position: right;
 
   width: 100%;
   height: 100%;
+  // max-height: 100vh;
 
   color: $white;
 

@@ -8,7 +8,7 @@ import {updateStorage} from '../database/StoragedPokemons';
 
   return (`
       <h1 >Pokedex</h1>
-      <a class="icon-button" onClick="${handleUpdateStorage()}">Atualizar</a>
+      <a class="icon-button" onClick="${handleUpdateStorage()}">Sicronizar Storage</a>
     `)
  }
 
