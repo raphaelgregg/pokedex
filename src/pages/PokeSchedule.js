@@ -1,15 +1,26 @@
-import {PokeList} from '../components/PokeList';
-import {Pagination} from '../components/Pagination';
+import renderHeader from '../components/Header';
+import renderPagination from '../components/Pagination';
+import executeActionsPaginator from '../controllers/PaginationController';
 
-function PokeSchedule(){
-  const PokeSchedule = document.createElement('div');
+import {html} from '../utils/getElements';
 
-  PokeSchedule.classList.add('poke-schedule');
-
-  PokeSchedule.append(Pagination());
-  PokeSchedule.append(PokeList()); 
- 
-  return PokeSchedule;
+function cretePokeSchedule(){
+  return (`
+    <div class="poke-schedule">
+      <div class="header"></div>
+      <div class="poke-list"></div>
+      <div class="pagination"></div>
+    </div> 
+  `);
 }
 
-export {PokeSchedule};
+export default function renderPokeSchedule(element){
+  const pokeSchedule = cretePokeSchedule(); 
+  element.innerHTML = pokeSchedule;
+
+  renderHeader(html.get('.header'));
+
+  renderPagination(html.get('.pagination'));  
+
+  executeActionsPaginator();
+}

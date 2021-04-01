@@ -1,27 +1,37 @@
-// const totalPokemon = 151;
-const baseURL = `https://pokeapi.co/api/v2/pokemon`;
+let baseURL = `https://pokeapi.co/api/v2/pokemon/`;
 // const baseURL = `https://pokeapi.co/api/v2/pokemon?limit=${totalPokemon}`;
 
-async function fetchPokeAPI() {
-    let response = await fetch(baseURL);
-    let data = await response.json();
-    const {count} = data;
+async function api(pokemon) {
+    let data="";
 
-    response = await fetch(baseURL+`?limit=${count}`);
-    data = await response.json();
+    if(pokemon != undefined) {
+        let response = await fetch(baseURL + pokemon);
+        data = await response.json();
+        
+    }else {
+        let response = await fetch(baseURL);
+        data = await response.json();
 
-    // console.log(data);
+        const {count} = data;
+        // const count = 47;
+        const limit = `?limit=${count}`;
+
+        response = await fetch(baseURL + `${limit}`);
+        data = await response.json();
+    }
+
     return data;
 }
 
-async function fetchPokemon(urlPokemon){
-    const response = await fetch(urlPokemon);
-    const data = await response.json();
 
-    let name = data['name'];
-    let pokemonFrontImgUrl = data['sprites']['front_default'];
+// async function fetchPokemon(urlPokemon){
+//     const response = await fetch(urlPokemon);
+//     const data = await response.json();
 
-    return {name,pokemonFrontImgUrl};
-};
+//     let name = data['name'];
+//     let pokemonFrontImgUrl = data['sprites']['front_default'];
 
-export {fetchPokeAPI, fetchPokemon};
+//     return {name,pokemonFrontImgUrl};
+// };
+
+export {api}; 

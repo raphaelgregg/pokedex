@@ -32,7 +32,7 @@ module.exports = {
         rules: [
             {
 								// expressão regular que informa se o o arquivo é JS ou não
-                // test: /\.jsx$/,
+                test: /\.js$/,
 								// excluir os arquivos do node_modules, 
 								// pois os mesmo ja vem prontos para serem lidos
                 exclude: /node_modules/,
@@ -44,7 +44,25 @@ module.exports = {
               test: /\.scss$/,
               exclude: /node_modules/,
               use: ['style-loader', 'css-loader', 'sass-loader']
-          }
+            },
+            //Config file-loader
+            // {
+            //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            //   loader: 'file-loader',
+            //   options: {
+            //     outputPath: path.resolve(__dirname, 'src', 'styles', 'images'),
+            //   }
+            // },
+
+            {
+              test: /\.(png|jpe?g|gif)$/i,
+              use:[
+                {
+                  loader: 'file-loader',
+                }
+              ]
+            },
+      
         ],
     }
 }

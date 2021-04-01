@@ -1,3 +1,5 @@
+import "@babel/polyfill";
 import App from './App';
 
-document.body.append(App());
+const root = document.getElementById('root');
+document.addEventListener('DOMContentLoaded', App(root));
