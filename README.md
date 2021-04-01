@@ -1,5 +1,9 @@
 # Pokédex
-
+<p align="center">
+<img src="./.github/pokedex-home.png" alt="home">
+<img src="./.github/pokedex-detail.png" alt="detail">
+<img src="./.github/pokedex-mobile.png" alt="mobile">
+</p>
 ## Desafio montar uma Pokédex
 
 ### Requisitos
