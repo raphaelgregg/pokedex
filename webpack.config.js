@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV !==  'production';
@@ -22,11 +23,11 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'public')
     },
     // adicionar plugin ao webpack
-  //   plugins: [
-  //     new HtmlWebpackPlugin({
-  //         template: path.resolve(__dirname, 'public', 'index.html' )
-  //     })
-  // ],
+    plugins: [
+      new HtmlWebpackPlugin({
+          template: path.resolve(__dirname, 'public', 'index.html' )
+      })
+    ],
 		// informa como a aplicação vai ser comportar quanto importar arquivos
     module: {
         rules: [
