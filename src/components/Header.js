@@ -1,18 +1,23 @@
 import {updateStorage} from '../database/StoragedPokemons';
+import {html} from '../utils/getElements';
 
- function createHeader () {
-  async function handleUpdateStorage() {
-    console.log('sicronize LocalStorage');
-    // await updateStorage();
-  }
-
+function createHeader () {
   return (`
       <h1 >Pokedex</h1>
-      <a class="icon-button" onClick="${handleUpdateStorage()}">Sincronizar Storage</a>
+      <a id="storageSynchronizeButton" class="icon-button">Sincronizar Storage</a>
     `)
- }
+}
 
- export default function renderHeader(element) {
+export default function renderHeader(element) {
    const header = createHeader();
    element.innerHTML = header;
- };
+
+  handleUpdateStorage()  
+};
+
+ function handleUpdateStorage() {
+  const storageSynchronizeButton = html.get('#storageSynchronizeButton')
+  console.log('clikei handleUpdateStorage');
+   storageSynchronizeButton.onclick = async () => await updateStorage();
+  // await updat;eStorage();
+}

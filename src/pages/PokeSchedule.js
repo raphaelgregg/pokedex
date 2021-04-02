@@ -1,4 +1,4 @@
-import renderHeader from '../components/Header';
+import renderHeader, {handleUpdateStorage} from '../components/Header';
 import renderPagination from '../components/Pagination';
 import executeActionsPaginator from '../controllers/PaginationController';
 

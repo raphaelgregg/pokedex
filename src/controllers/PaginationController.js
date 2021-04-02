@@ -1,4 +1,5 @@
-import renderCard from '../components/Card';
+import renderCard from '../components/Card'; 
+
 
 import {StoragedPokemons} from '../database/StoragedPokemons';
 import {html} from '../utils/getElements';
@@ -143,3 +144,4 @@ export default function executeActionsPaginator () {
   controls.createListeners();
   // detailPokemon();
 }
+

@@ -34,6 +34,7 @@ async function getPokemons(){
 }
 
 async function updateStorage() {
+    console.log('clikei update storage')
     await getPokemons();
 
     // if(StoragedPokemons.length !== pokeAPI.length || StoragedPokemons.length === 0){
@@ -59,6 +60,6 @@ async function updateStorage() {
     // }
 }
 
-console.log(StoragedPokemons)
+// console.log(StoragedPokemons)
 
 export {updateStorage, StoragedPokemons};
